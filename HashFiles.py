@@ -1,0 +1,16 @@
+import hashlib
+BLOCKSIZE = 65536
+hasherMD5 = hashlib.md5()
+hasherSHA1 = hashlib.sha1()
+hashlib.SHA512 = hashlib.sha512()
+#For hashing demo, use source code file
+with open('HashFiles.py') as myFile:
+    buf = myFile.read(BLOCKSIZE)
+    while buf:
+        hasherMD5.update(buf)
+        hasherSHA1.update(buf)
+        hasherSHA512 = hashlib.sha512()
+        buf=myFile.read(BLOCKSIZE)
+print("MD5 signature is:    " + hasherMD5.hexdigest())
+print("SHA1 signature is:   " + hasherSHA1.hexdigest())
+print("SHA512 signature is: " + hasherSHA512.hexdigest())
