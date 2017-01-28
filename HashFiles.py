@@ -7,8 +7,8 @@ hashlib.SHA512 = hashlib.sha512()
 with open('HashFiles.py') as myFile:
     buf = myFile.read(BLOCKSIZE)
     while buf:
-        hasherMD5.update(buf)
-        hasherSHA1.update(buf)
+        hasherMD5.update(buf.encode('utf-8'))
+        hasherSHA1.update(buf.encode('utf-8'))
         hasherSHA512 = hashlib.sha512()
         buf=myFile.read(BLOCKSIZE)
 print("MD5 signature is:    " + hasherMD5.hexdigest())
