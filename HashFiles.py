@@ -3,6 +3,7 @@ BLOCKSIZE = 65536
 hasherMD5 = hashlib.md5()
 hasherSHA1 = hashlib.sha1()
 hashlib.SHA512 = hashlib.sha512()
+
 #For hashing demo, use source code file
 with open('HashFiles.py') as myFile:
     buf = myFile.read(BLOCKSIZE)
